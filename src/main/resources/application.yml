@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: chain-service
+  profiles:
+    active: @spring.profiles.active@

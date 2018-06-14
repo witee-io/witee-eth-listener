@@ -1,0 +1,19 @@
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: @eureka.client.service-url.defaultZone@
+
+spring:
+  application:
+      name: chain-service
+  cloud:
+    config:
+      profile: @spring.profiles.active@
+      label: master
+      uri: ${SPRING_CONFIG_URI:@spring.cloud.config.uri@}
+  zipkin:
+    base-url: @spring.zipkin.base-url@
